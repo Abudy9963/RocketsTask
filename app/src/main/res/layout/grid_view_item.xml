@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="rocket"
+            type="com.example.rocketstask.model.Rocket" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <ImageView
+            imageUrl="@{rocket.flickr_images.get(0)}"
+            android:id="@+id/image_view"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@id/image_view"
+        android:background="@drawable/gradient" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/image_view"
+        android:layout_margin="8dp"
+        android:drawablePadding="4dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:textColor="#fff"
+        tools:text="@{rocket.rocket_name}" />
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:id="@+id/wikipediaBtn"
+            android:layout_width="85dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp"
+            android:textAllCaps="false"
+            android:textSize="10dp"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            android:text="wikipedia"
+            android:layout_margin="8dp"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</layout>
